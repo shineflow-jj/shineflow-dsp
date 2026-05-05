@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Case Studies — Shineflow Amazon DSP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .cases-hero { padding: 160px var(--gutter) 80px; background: var(--ink); position: relative; overflow: hidden; }
+  .cases-hero::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(to right, transparent, var(--accent), transparent); opacity: 0.6; }
+  .cases-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted-on-dark); margin-bottom: 32px; transition: color var(--t-fast); }
+  .cases-back:hover { color: var(--cream); }
+  .case-card { background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(28px, 4vw, 48px); margin-bottom: 24px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; transition: border-color var(--t); }
+  .case-card:hover { border-color: rgba(255,122,26,0.3); }
+  @media (max-width: 880px) { .case-card { grid-template-columns: 1fr; } }
+  .case-card .tag { display: inline-flex; padding: 4px 10px; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); background: rgba(255,122,26,0.1); border-radius: 4px; width: fit-content; }
+  .case-card h3 { margin: 14px 0 6px; font-size: clamp(24px, 2.5vw, 30px); font-weight: 700; letter-spacing: -0.015em; }
+  .case-card .case-sub { font-size: 14px; color: var(--muted-on-dark); margin-bottom: 24px; }
+  .case-card dl { margin: 0; display: grid; gap: 18px; }
+  .case-card dt { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; font-weight: 600; }
+  .case-card dd { margin: 0; font-size: 15px; line-height: 1.6; color: rgba(246,242,235,0.7); }
+  .case-results-dark { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; align-content: start; }
+  .case-results-dark .case-result { background: var(--ink); padding: 24px; }
+  .case-results-dark .case-result .v { color: var(--cream); }
+  .case-results-dark .case-result .l { color: var(--muted-on-dark); }
+</style>
+</head>
+<body data-lang="ko">
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="i18n.js"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect } = React;
+
+const CASES_I18N = {
+  ko: {
+    eyebrow: 'CASE STUDIES',
+    title: '브랜드의 성장 곡선을\n바꾼 DSP 운영 사례',
+    body: '카테고리, 브랜드 단계, 광고 구조에 따라 DSP는 다른 방식으로 작동합니다. 아래는 샤인플로가 운영한 예시 케이스 스터디입니다 — 실제 사례로 점차 교체될 예정입니다.',
+    back: '← 홈으로',
+    cases: [
+      {
+        tag: 'CASE STUDY 01', title: 'K-Beauty Brand A', sub: 'Retargeting & Prospecting DSP Campaign',
+        challenge: '검색광고 중심 운영만으로는 신규 고객 확장과 이탈 고객 회수에 한계가 있었습니다. 브랜드 인지도는 있었으나 비검색 시점의 고객을 다시 끌어오는 채널이 부재했습니다.',
+        approach: 'Prospecting과 Retargeting 캠페인을 분리하고, 아마존 구매·탐색 신호 기반 오디언스와 제품 USP 중심 소재를 함께 운영했습니다. AMC 데이터를 활용해 상세페이지 방문자·장바구니 이탈자를 별도 흐름으로 분리했습니다.',
+        results: [
+          { v: '7.67x', l: 'Total ROAS' },
+          { v: '11.07x', l: 'Retargeting ROAS' },
+          { v: '14,024', l: 'Purchases' },
+          { v: '$278,968', l: 'Sales' },
+        ],
+      },
+      {
+        tag: 'CASE STUDY 02', title: 'Wellness Brand B', sub: 'Net-new Acquisition with AMC Audiences',
+        challenge: 'PPC 단독 운영으로는 도달 한계에 부딪혔고, 신규 고객 비중이 정체되어 있었습니다. 외부 마케팅 예산 대비 전환 효율을 입증할 채널이 필요했습니다.',
+        approach: 'AMC 기반 Lookalike·관심사 오디언스를 설계하고, 카테고리 첫 인상 소재와 리뷰·신뢰 소재를 분리해 운영했습니다. 외부 매체 예산 일부를 DSP로 재배분하며 LTV 기준으로 비교 측정했습니다.',
+        results: [
+          { v: '4.2x', l: 'Prospecting ROAS' },
+          { v: '+38%', l: 'New-to-brand share' },
+          { v: '6,512', l: 'Purchases' },
+          { v: '~3 mo.', l: 'Operating period' },
+        ],
+      },
+    ],
+    note: '* 위 수치는 예시이며, 실제 사례로 점차 교체될 예정입니다.',
+    cta: '우리 브랜드도 진단받기',
+  },
+  en: {
+    eyebrow: 'CASE STUDIES',
+    title: 'DSP work that bent\nthe growth curve.',
+    body: 'DSP plays differently depending on category, brand stage, and existing ad structure. The cases below are samples of work run by Shineflow — they will be replaced with real engagements over time.',
+    back: '← Back to home',
+    cases: [
+      {
+        tag: 'CASE STUDY 01', title: 'K-Beauty Brand A', sub: 'Retargeting & Prospecting DSP Campaign',
+        challenge: 'Search-led ads alone limited net-new acquisition and recovery of lost shoppers. The brand had awareness but no channel to re-engage customers outside the search moment.',
+        approach: 'We split prospecting and retargeting and ran Amazon-signal audiences alongside USP-led creative. AMC data isolated detail-page visitors and cart abandoners into their own flows.',
+        results: [
+          { v: '7.67x', l: 'Total ROAS' },
+          { v: '11.07x', l: 'Retargeting ROAS' },
+          { v: '14,024', l: 'Purchases' },
+          { v: '$278,968', l: 'Sales' },
+        ],
+      },
+      {
+        tag: 'CASE STUDY 02', title: 'Wellness Brand B', sub: 'Net-new Acquisition with AMC Audiences',
+        challenge: 'PPC-only operations had hit a reach ceiling and new-to-brand share was flat. The brand needed a channel that could prove conversion efficiency vs. outside marketing.',
+        approach: 'We designed AMC-based lookalike and interest audiences, and ran category first-impression creative separately from reviews and trust creative. A portion of outside-channel budget was re-allocated to DSP and benchmarked on LTV.',
+        results: [
+          { v: '4.2x', l: 'Prospecting ROAS' },
+          { v: '+38%', l: 'New-to-brand share' },
+          { v: '6,512', l: 'Purchases' },
+          { v: '~3 mo.', l: 'Operating period' },
+        ],
+      },
+    ],
+    note: '* Figures shown are samples and will be replaced with real engagements over time.',
+    cta: 'Diagnose my brand',
+  },
+};
+
+function App() {
+  const [lang, setLang] = useState(() => { try { return localStorage.getItem('sf-lang') || 'ko'; } catch (e) { return 'ko'; } });
+  useEffect(() => { try { localStorage.setItem('sf-lang', lang); } catch (e) {} document.documentElement.lang = lang; document.body.dataset.lang = lang; }, [lang]);
+  const t = CASES_I18N[lang];
+
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <>
+      <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+        <a href="index.html" className="logo"><span className="logo-mark"></span><span>shineflow</span></a>
+        <nav className="nav">
+          <a href="index.html#why">Why DSP</a>
+          <a href="index.html#what">Services</a>
+          <a href="index.html#process">Process</a>
+          <a href="cases.html">Cases</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+        <div className="header-right">
+          <div className="lang-toggle">
+            <button className={lang === 'ko' ? 'active' : ''} onClick={() => setLang('ko')}>KR</button>
+            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
+          </div>
+          <a className="btn btn-ghost" href="index.html#contact">Contact</a>
+        </div>
+      </header>
+
+      <section className="cases-hero">
+        <div className="container">
+          <a href="index.html" className="cases-back">{t.back}</a>
+          <div className="eyebrow"><span className="dot"></span>{t.eyebrow}</div>
+          <h1 className="h-section" style={{ marginTop: 18, maxWidth: 880 }}>{t.title.split('\n').map((l,i)=>(<React.Fragment key={i}>{i>0&&<br/>}{l}</React.Fragment>))}</h1>
+          <p className="body-lg" style={{ maxWidth: 720, marginTop: 24 }}>{t.body}</p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          {t.cases.map((c, i) => (
+            <div className="case-card" key={i}>
+              <div>
+                <span className="tag">{c.tag}</span>
+                <h3>{c.title}</h3>
+                <div className="case-sub">{c.sub}</div>
+                <dl>
+                  <div><dt>{lang === 'ko' ? 'Challenge / 문제' : 'Challenge'}</dt><dd>{c.challenge}</dd></div>
+                  <div><dt>{lang === 'ko' ? 'Approach / 접근' : 'Approach'}</dt><dd>{c.approach}</dd></div>
+                </dl>
+              </div>
+              <div className="case-results-dark">
+                {c.results.map((r, j) => (
+                  <div className="case-result" key={j}>
+                    <div className="v"><span className="accent">{r.v}</span></div>
+                    <div className="l">{r.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+          <div style={{ marginTop: 24, fontSize: 12, color: 'rgba(246,242,235,0.45)' }}>{t.note}</div>
+          <div style={{ marginTop: 56, textAlign: 'center' }}>
+            <a className="btn btn-primary" href="index.html#contact">{t.cta}
+              <span className="btn-arrow"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="footer-grid">
+          <div>
+            <div className="logo" style={{ marginBottom: 16 }}><span className="logo-mark"></span><span>shineflow</span></div>
+            <p>A new standard for Amazon growth.</p>
+          </div>
+          <div>
+            <h5>CONTACT</h5>
+            <ul>
+              <li style={{ color: 'rgba(246,242,235,0.7)', whiteSpace: 'pre-line', fontSize: 13 }}>{`600 1st Ave Ste 102\nSeattle, WA 98104`}</li>
+              <li><a href="mailto:info@shineflowseattle.com">info@shineflowseattle.com</a></li>
+            </ul>
+          </div>
+          <div><h5>SERVICES</h5><ul><li><a href="index.html#services">Amazon DSP</a></li><li><a href="index.html#services">AMC × AI Insights</a></li><li><a href="index.html#services">Creative Production</a></li></ul></div>
+          <div><h5>COMPANY</h5><ul><li><a href="index.html#why">Why Shineflow</a></li><li><a href="cases.html">Case Studies</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+        </div>
+        <div className="footer-bottom"><span>© 2025 Shineflow Inc. All rights reserved.</span></div>
+      </footer>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
