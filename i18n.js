@@ -10,7 +10,7 @@ window.I18N = {
       contact: '문의하기',
     },
     hero: {
-      eyebrow: '아마존 PPC를 넘어, 더 넓은 도달과 정교한 타겟팅으로\n고객을 발견하고 전환을 확장하는 DSP 새로운 성과의 기준을 만듭니다',
+      eyebrow: '샤인플로 DSP는 한국 브랜드에 특화된 Amazon DSP 운영 서비스입니다.\n아마존의 오디언스 신호와 브랜드 데이터를 바탕으로 신규 고객 발굴, 리타게팅, 전환 효율 개선까지 하나의 캠페인 구조로 관리합니다.',
       title1: 'A NEW STANDARD',
       title2: 'FOR AMAZON GROWTH',
       ctaPrimary: '성장 진단 받기',
@@ -33,8 +33,8 @@ window.I18N = {
     },
     why: {
       eyebrow: 'WHY DSP',
-      title: 'DSP는 도구입니다.\n성과는 운영자의 설계에서 나옵니다.',
-      body: 'Amazon DSP는 강력한 광고 도구입니다. 하지만 성과는 도구 자체가 아니라, 누가 어떤 데이터와 전략으로 운영하느냐에 달려있습니다. 샤인플로는 아마존 본사 개발자·데이터 전문가 출신 CEO가 이끄는, 아마존에 특화된 전문가 조직입니다.',
+      title: 'AI 시대의 광고는,\n어떤 데이터로 예측하느냐에서 갈립니다.',
+      body: 'Amazon DSP는 아마존의 구매·탐색 신호를 바탕으로, 아마존 구매 가능성이 높은 고객을 예측하고 찾아가는 광고 플랫폼입니다. PPC가 이미 검색 중인 고객을 잡는다면, DSP는 AMC*를 활용하여 검색 전 고객, 구매 고려 고객, 이탈 고객까지 Amazon 안팎에서 확장성 있게 도달합니다.\n\n많은 브랜드들이 Google·Meta·인플루언서 등 외부 마케팅 예산을 DSP로 재배분하고 있습니다. Amazon 매출이 목표라면, 데이터의 출발점도 Amazon이어야 하기 때문입니다.',
       cards: [
         { num: '01', t: '데이터 기반 오디언스 설계', d: '아마존 구매·탐색 신호, 상세페이지 행동, AMC 분석을 결합해 캠페인의 첫 단추를 정확하게 채웁니다.' },
         { num: '02', t: 'Amazon 전용 운영 인프라', d: '검색·디스플레이·비디오·외부 지면을 하나의 시스템으로 관리하며, 채널 간 학습이 누적되는 구조입니다.' },
@@ -244,7 +244,7 @@ window.I18N = {
       contact: 'Contact',
     },
     hero: {
-      eyebrow: 'Beyond Amazon PPC — broader reach, sharper targeting,\nand a new standard for discovering customers and scaling conversions with DSP.',
+      eyebrow: 'Shineflow DSP is an Amazon DSP managed service built for Korean brands.\nGrounded in Amazon audience signals and your brand data, we run new-customer prospecting, retargeting, and conversion efficiency under one campaign structure.',
       title1: 'A NEW STANDARD',
       title2: 'FOR AMAZON GROWTH',
       ctaPrimary: 'Get a Growth Diagnosis',
@@ -267,8 +267,8 @@ window.I18N = {
     },
     why: {
       eyebrow: 'WHY DSP',
-      title: 'DSP is a tool.\nResults come from how it\'s designed.',
-      body: 'Amazon DSP is a powerful advertising tool. But results don\'t come from the tool itself — they come from who runs it, with which data and which strategy. Shineflow is led by a CEO from Amazon\'s engineering and data org, and is built specifically to operate Amazon advertising.',
+      title: 'In the age of AI,\nwhat separates ads is the data behind them.',
+      body: 'Amazon DSP is an advertising platform that predicts and reaches customers most likely to buy on Amazon, grounded in Amazon\'s purchase and browse signals. Where PPC catches customers who are already searching, DSP uses AMC* to extend reach to pre-search, consideration, and lapsed audiences across Amazon and beyond.\n\nMany brands are reallocating Google, Meta, and influencer spend into DSP. If Amazon revenue is the goal, the data has to start on Amazon too.',
       cards: [
         { num: '01', t: 'Data-driven audience design', d: 'We combine Amazon purchase and browse signals, detail-page behavior, and AMC analysis so the first move of every campaign is precise.' },
         { num: '02', t: 'An Amazon-native operating system', d: 'Search, Display, Video, and off-Amazon surfaces run on one system, so learning compounds across channels.' },
