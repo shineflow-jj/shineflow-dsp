@@ -43,7 +43,6 @@ window.I18N = {
       perfTitle: '아래 수치는 샤인플로 운영 사례 기준입니다.',
       perf: [
         { big: '95%+', meta: '고객 만족도 / 지속' },
-        { big: '$XXM+', meta: 'Amazon Ads managed spend' },
         { big: '3–10x', meta: '샤인플로 DSP ROAS Range' },
       ],
       footnote: '* 실제 성과는 브랜드, 예산, 카테고리, 소재, 운영 기간에 따라 달라질 수 있습니다.',
@@ -277,7 +276,6 @@ window.I18N = {
       perfTitle: 'Numbers below are based on Shineflow operating data.',
       perf: [
         { big: '95%+', meta: 'Client satisfaction / retention' },
-        { big: '$XXM+', meta: 'Amazon Ads managed spend' },
         { big: '3–10x', meta: 'Shineflow DSP ROAS range' },
       ],
       footnote: '* Actual performance varies with brand, budget, category, creative, and operating period.',

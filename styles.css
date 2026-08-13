@@ -606,7 +606,7 @@ button { font-family: inherit; cursor: pointer; }
 .perf-stats {
   margin-top: 48px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--perf-cols, 3), 1fr);
   background: var(--ink-2);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);

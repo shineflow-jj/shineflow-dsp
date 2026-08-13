@@ -190,17 +190,6 @@ function Proof({ t }) {
         <Reveal className="proof-image">
           <img src="assets/collage-2.jpg" alt="" />
         </Reveal>
-        <Reveal className="proof-stats" stagger>
-          {t.proof.stats.map((s, i) => (
-            <div className="proof-stat" key={i}>
-              <div className="num">{s.num}</div>
-              <div>
-                <div className="lbl"><Multiline text={s.label} /></div>
-                {i === 0 && <div className="placeholder-tag">{t.proof.placeholder}</div>}
-              </div>
-            </div>
-          ))}
-        </Reveal>
       </div>
     </section>
   );
@@ -229,7 +218,7 @@ function WhyDSP({ t }) {
         </Reveal>
         <Reveal>
           <div style={{ marginTop: 56, fontSize: 13, color: 'var(--muted-on-dark)' }}>{t.why.perfTitle}</div>
-          <div className="perf-stats">
+          <div className="perf-stats" style={{ '--perf-cols': t.why.perf.length }}>
             {t.why.perf.map((p, i) => (
               <div className="perf-stat" key={i}>
                 <div className="big"><span className="accent">{p.big}</span></div>
