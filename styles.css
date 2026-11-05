@@ -229,6 +229,19 @@ button { font-family: inherit; cursor: pointer; }
 
 .header-right { display: flex; align-items: center; gap: 14px; }
 
+/* 직원용 로그인 링크 — 고객 방문자에게 눈에 띄지 않게 작은 텍스트 링크로 둔다 */
+.team-login {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted-on-dark);
+  white-space: nowrap;
+  transition: color var(--t-fast);
+}
+.team-login:hover { color: var(--cream); }
+.header.on-light .team-login { color: rgba(16,16,16,0.6); }
+.header.on-light .team-login:hover { color: var(--ink); }
+@media (max-width: 600px) { .team-login { display: none; } }
+
 .lang-toggle {
   display: inline-flex;
   border: 1px solid var(--line-strong);

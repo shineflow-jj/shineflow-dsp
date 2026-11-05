@@ -8,6 +8,7 @@ window.I18N = {
       cases: '사례',
       faq: 'FAQ',
       contact: '문의하기',
+      teamLogin: '팀 로그인',
     },
     hero: {
       eyebrow: '샤인플로 DSP는 한국 브랜드에 특화된 Amazon DSP 운영 서비스입니다.\n아마존의 오디언스 신호와 브랜드 데이터를 바탕으로 신규 고객 발굴, 리타게팅, 전환 효율 개선까지 하나의 캠페인 구조로 관리합니다.',
@@ -241,6 +242,7 @@ window.I18N = {
       cases: 'Cases',
       faq: 'FAQ',
       contact: 'Contact',
+      teamLogin: 'Team Login',
     },
     hero: {
       eyebrow: 'Shineflow DSP is an Amazon DSP managed service built for Korean brands.\nGrounded in Amazon audience signals and your brand data, we run new-customer prospecting, retargeting, and conversion efficiency under one campaign structure.',
