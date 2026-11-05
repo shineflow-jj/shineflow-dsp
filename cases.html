@@ -131,6 +131,7 @@ function App() {
           <a href="index.html#faq">FAQ</a>
         </nav>
         <div className="header-right">
+          <a className="team-login" href="https://platform.shineflowseattle.com">{lang === 'ko' ? '팀 로그인' : 'Team Login'}</a>
           <div className="lang-toggle">
             <button className={lang === 'ko' ? 'active' : ''} onClick={() => setLang('ko')}>KR</button>
             <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>

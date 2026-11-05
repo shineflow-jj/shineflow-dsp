@@ -62,6 +62,9 @@ const ArrowIcon = () => (
 // ============================================================
 // Header
 // ============================================================
+// 직원 전용 DSP 플랫폼 (회사 Google 계정으로만 로그인됨)
+const TEAM_LOGIN_URL = 'https://platform.shineflowseattle.com';
+
 function Header({ lang, setLang, t, onContact }) {
   const [scrolled, setScrolled] = useState(false);
   const [onLight, setOnLight] = useState(false);
@@ -97,6 +100,7 @@ function Header({ lang, setLang, t, onContact }) {
         <a href="#faq">{t.nav.faq}</a>
       </nav>
       <div className="header-right">
+        <a className="team-login" href={TEAM_LOGIN_URL}>{t.nav.teamLogin}</a>
         <div className="lang-toggle" role="group" aria-label="Language">
           <button className={lang === 'ko' ? 'active' : ''} onClick={() => setLang('ko')}>KR</button>
           <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
